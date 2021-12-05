@@ -1,0 +1,17 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0;
+    background-color: #FAFAFB;
+    font-family: 'DM Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+*:focus{
+    outline: none;
+}
+ul{
+    padding:0;
+    list-style: none;
+    margin: 0;
+}

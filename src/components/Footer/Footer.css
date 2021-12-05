@@ -1,0 +1,112 @@
+
+.btn{
+    width: 68px;
+    height: 38px;
+    background-color: #FFFFFF;
+border: 0.5px solid #EFEFEF;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.btn-group{
+
+}
+.btn:focus{
+    background-color: #FFFFFF;
+    box-shadow: none;
+}
+/* .btn:focus .btn-check{
+    padding: 4px;
+   
+}
+/* .btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
+}  */
+/* input[type='checkbox'] {
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+
+input[type='checkbox']:checked ~.check {
+    background-color: #fff;
+    box-shadow: 0 0 0 1200px #092c3e;
+}
+
+.check:before {
+    background-color: #FCFCFD;
+    box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+    border-radius: 8px;
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 61px;
+    height: 30px;
+    transition: 0.5s;
+}
+
+input[type='checkbox']:checked ~ .check::before{
+    transform: translateX(-50px);
+}
+
+.check:after {
+    background-color: #092c3e;
+    box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+    border-radius: 8px;
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 61px;
+    height: 30px;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type='checkbox']:checked ~ .check::after{
+    transform: translateX(0px);
+}*/
+/* .check {
+    background-color: #FFFFFF;
+    border: 0.5px solid #EFEFEF;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    display: block;
+    width: 128px;
+    height: 38px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+
+} 
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+.light-icon{
+    text-align: center;
+    display: inline-block;
+    width: 61px;
+    height: 30px;
+    background-color: #FCFCFD;
+box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+border-radius: 8px;
+}
+.right-icon{
+    text-align: center;
+    display: inline-block;
+    width: 61px;
+    height: 30px;
+    background-color: #FCFCFD;
+box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+border-radius: 8px;
+} */
+
+
+
+
+/* =========== */
+

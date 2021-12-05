@@ -1,0 +1,30 @@
+{
+    "currency_text":"Рубль",
+    "ru": "Ruskiy",
+    "en": "angliskiy",
+    "uz": "Uzbekskiy",
+    "dropdown_profile":"Мой профил",
+    "dropdown_sing_out":"Выход",
+    "intro_title":"Забронируйте у нас и наслаждайтесь путешествием",
+    "nav-search":"Поиск",
+    "nav-hotel":"Отель",
+    "nav-flight":"Полет",
+    "nav-rental-car":"Прокат Aвтомобилей",
+    "passenger_title":"пассажир",
+    "passenger-adults":"Взрослые",
+    "passenger-adult-data":"Возраст от 13 лет и старше",
+    "passenger-children":"Дети ",
+    "passenger-children-data":"Возраст 2–12 лет",
+    "passenger-infant":"Младенцы",
+    "passenger-infants-data":"до 2 лет",
+    "nav-location":"Место нахождения",
+    "location-placeholder":"Откуда ты?",
+    "add-placeholder":"Добавить дату",
+    "check-in":"Регистрироваться",
+    "check-out":"Выехать из гостиницы",
+    "notification-dropdown":"Вы забронировали номер и заработали 8 баллов за создание клиента Steve Mathew",
+    "notification-date":"недель назад"
+    
+    
+   
+}

@@ -1,0 +1,10 @@
+
+.card:nth-child(1){
+    border-radius: 18px;
+}
+.card:nth-child(2){
+    border-radius: 20px;
+}
+.card:nth-child(4),.card:nth-child(5),.card:nth-child(6){
+    border-radius: 15px;
+}

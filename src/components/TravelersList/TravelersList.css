@@ -1,0 +1,29 @@
+.passenger-dropdown-body.open {
+    display: block;
+}
+.passenger-dropdown-body {
+    padding: 16px 29px 21px 29px;
+    width: 354px;
+    height: 224px;
+    box-shadow: 0px 12px 60px rgba(89, 89, 89, 0.1);
+    border-radius: 16px;
+    position: absolute;
+    margin-top: -340px;
+    right: 0;
+    background-color: #fff;
+    border-top: 1px solid #E5E8EC;
+    display: none;
+    z-index: 111;
+}
+.active{
+    color: #B1B5C4 !important;
+    border-bottom: none;
+}
+.breadcrumb-item:before{
+    display: none;
+
+}
+.breadcrumb-item a{
+    text-decoration: none;
+    color: #3B3E44;
+}
