@@ -16,12 +16,16 @@ import { FeatureRoom } from '../../styled';
 import { DescriptionAmenities } from '../../styled';
 import { DescriptionAmenitiesTitle } from '../../styled';
 import { DetailTab } from '../../styled';
+import { AmenitiesMenu } from '../../styled';
 import { BiWifi } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { MdOutlineComputer } from "react-icons/md";
 import { MdRestaurant} from "react-icons/md";
 import { MdPersonalVideo } from "react-icons/md";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { MdOutlineKeyboardHide } from "react-icons/md";
+import { MdEmojiFoodBeverage } from "react-icons/md";
 import { RiHotelBedLine } from "react-icons/ri";
 import { RiExchangeLine } from "react-icons/ri";
 import './DetailInfo.css'
@@ -114,7 +118,7 @@ const DetailInfo = () => {
                             <DescriptionAmenitiesTitle>
                             Amenities
                             </DescriptionAmenitiesTitle>
-                            <div>
+                            <AmenitiesMenu>
                                 <ul>
                                     <li> <span><BiWifi /></span> Free wifi 24/7</li>
                                     <li> <span><RiComputerLine /></span> Free computer</li>
@@ -123,11 +127,11 @@ const DetailInfo = () => {
                                 </ul>
                                 <ul>
                                     <li> <span><FaBath /></span> Free clean bathroom</li>
-                                    <li> <span></span> Breakfast included</li>
-                                    <li> <span></span> ATM</li>
-                                    <li> <span></span> Nearby city</li>
+                                    <li> <span><MdEmojiFoodBeverage /></span> Breakfast included</li>
+                                    <li> <span><MdOutlineKeyboardHide /></span> ATM</li>
+                                    <li> <span><HiOutlineOfficeBuilding /></span> Nearby city</li>
                                 </ul>
-                            </div>
+                                </AmenitiesMenu>
 
                         </DescriptionAmenities>
 

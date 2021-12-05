@@ -203,18 +203,12 @@ const TravelersList = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(selectRef.current.props.value)
-        console.log(checkinRef.current.value)
-        console.log(checkoutRef.current.value.substring(0, 10))
+
     }
 
     useEffect(() => {
-        selectRef.current.value = 'where are your from?'
-        console.log(selectRef)
-        checkinRef.current.value = 'Add-date'
-        console.log(checkinRef)
-        checkoutRef.current.value = 'Add-date'
-        console.log(checkoutRef)
+      
+    
     }, [])
 
 
@@ -318,7 +312,6 @@ const TravelersList = () => {
                                 {t('nav-location')}
                                 <Select
                                     options={options}
-                                    ref={selectRef}
                                     placeholder={t('location-placeholder')}
                                 />
                                 <ArrowCircle><CgArrowsExchange /></ArrowCircle>
@@ -339,7 +332,7 @@ const TravelersList = () => {
                                 keyboard={false}
                             >
                                 <Modal.Body>
-                                    <StartDate date={{ date, setDate }} />
+                                < Calendar onChange={date}  />
                                 </Modal.Body>
                                 <Button variant="secondary" onClick={handleClose}>
                                     Close
@@ -359,7 +352,7 @@ const TravelersList = () => {
                                 keyboard={false}
                             >
                                 <Modal.Body>
-                                    <EndDate date={{ endDate, setEndDate }} />
+                                < Calendar onChange={date}  />
                                 </Modal.Body>
                                 <Button variant="secondary" onClick={handleCloseCheckOut}>
                                     Close
@@ -381,10 +374,4 @@ const TravelersList = () => {
 
 export default TravelersList;
 
-function StartDate({ date }) {
-    return < Calendar onChange={date.setDate} value={date.date} />
-}
 
-function EndDate({ date }) {
-    return < Calendar onChange={date.setEndDate} value={date.endDate} />
-}

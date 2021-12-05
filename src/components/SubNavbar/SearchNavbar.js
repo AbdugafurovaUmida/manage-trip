@@ -17,6 +17,7 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal'
 import Button from '@restart/ui/esm/Button';
+import { useNavigate } from 'react-router';
 
 
 
@@ -129,9 +130,11 @@ const locationIcon = <HiOutlineLocationMarker />
     const handleCloseCheckOut = () => setShowCheckOut(false);
 
     // ========= Form ========
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+            navigate('/hotel-list')
     }
 
     useEffect(() => {

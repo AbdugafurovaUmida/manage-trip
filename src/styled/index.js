@@ -351,6 +351,26 @@ color: #23262F;
 margin-bottom:29px;
 `
 
+export const AmenitiesMenu = styled.div`
+ul{
+    &:not(:last-child){
+        margin-right:200px;
+    },
+    li{
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #353945;
+        margin-bottom:26px;
+        span{
+            color: #353945;
+            margin-right:16px;
+            font-size:24px;
+        }
+    }
+}
+`
+
 // ========== Theme =========
 
 
