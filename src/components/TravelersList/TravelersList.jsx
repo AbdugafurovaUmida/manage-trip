@@ -499,7 +499,6 @@ const TravelersList = () => {
                                 {t('nav-location')}
                                 <Select
                                     options={options}
-                                    ref={selectRef}
                                     placeholder={t('location-placeholder')}
                                     components={{ Option: IconOption }}
                                     styles={{customStyles}}
@@ -560,10 +559,4 @@ const TravelersList = () => {
 
 export default TravelersList;
 
-function StartDate({ date }) {
-    return < Calendar onChange={date.setDate} value={date.date} />
-}
 
-function EndDate({ date }) {
-    return < Calendar onChange={date.setEndDate} value={date.endDate} />
-}

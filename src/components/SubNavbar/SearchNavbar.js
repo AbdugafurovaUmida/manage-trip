@@ -397,6 +397,7 @@ const SearchNavbar = () => {
 
     const handleCloseCheckOut = () => setShowCheckOut(false);
 
+<<<<<<< HEAD
     // ========= Form =======
     
 
@@ -409,6 +410,14 @@ const SearchNavbar = () => {
         navigate('/hotel-list')
         }, 3000);
         
+=======
+    // ========= Form ========
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+            navigate('/hotel-list')
+>>>>>>> 91e05a835cadd742f219f780a95bcd669b6af9ab
     }
 
 
