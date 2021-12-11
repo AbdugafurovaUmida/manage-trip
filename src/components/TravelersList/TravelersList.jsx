@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components'
-import { Nav } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next';
 import { IoIosArrowDown } from "react-icons/io";
 import { CgArrowsExchange } from "react-icons/cg";
@@ -10,7 +9,6 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import Modal from 'react-bootstrap/Modal'
 import Select, { components } from "react-select";
 import Calendar from "react-calendar";
-import { Link } from 'react-router-dom';
 import { Container } from '../../styled';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 import { useNavigate } from 'react-router';
@@ -298,11 +296,7 @@ line-height: 24px;
 }
 `
 
-const ModalCalendar =styled.div`
-.react-calendar&{
-    background-color:red;
-}
-`
+
 
 
 const TravelersList = () => {
@@ -324,7 +318,7 @@ const TravelersList = () => {
 
     // =======Calendar========
 
-    const [isCalendarOpen, setCalendarOpen] = useState(false);
+    // const [isCalendarOpen, setCalendarOpen] = useState(false);
     // const calendarDropdown = () => setCalendarOpen(!isCalendarOpen);
     const [date, setDate] = useState(null);
     const [endDate, setEndDate] = useState(null)

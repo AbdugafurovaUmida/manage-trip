@@ -260,7 +260,7 @@ const Congrulations = () => {
                     </Col>
                     <Col xs={7} style={{ paddingLeft: '100px' }}>
                         <ReserveDetailsImg>
-                            <img src={`/assets/img/${hoteldetails.photo}`} />
+                            <img src={`/assets/img/${hoteldetails.photo}`} alt={hoteldetails.name}/>
                         </ReserveDetailsImg>
                     </Col>
                 </Row>

@@ -123,14 +123,14 @@ export const Footer = () => {
                               <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
                                 <ToggleButton id="tbg-btn-1"
                                     value={1}
-                                    onClick={() => toggleTheme('light')}
+                                    onClick={() => toggleTheme(theme && 'light')}
                                     variant=""
                                 >
                                     <HiSun />
                                 </ToggleButton>
                                 <ToggleButton id="tbg-btn-2"
                                     value={2}
-                                    onClick={() => toggleTheme('dark')}
+                                    onClick={() => toggleTheme(theme && 'dark')}
                                     variant=""
                                 >
                                     <FiMoon />

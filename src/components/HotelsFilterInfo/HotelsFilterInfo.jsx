@@ -336,7 +336,7 @@ const HotelsFilterInfo = () => {
 
     const mappedHotels = hotels.map(el => (
         <HotelsinfoCard key={el.id} href={`/details/${el.id}`}>
-        <img src={`/assets/img/${el.photo}`} alt="hotels" />
+        <img src={`/assets/img/${el.photo}`} alt={el.name}/>
         <HotelsinfoCardOffer>
             <HotelsinfoCardTitle> {el.name}</HotelsinfoCardTitle>
             <HotelsinfoCardRating>

@@ -24,10 +24,10 @@ const DetailsContent = ({props}) => {
                     color="#e0a433"
                 /><small>{props.rating}</small> <span>({props.reviews} {t('SuccesReviews')})</span>
                 <CgFlagAlt style={{ fontSize: '16px', margin: '0 8px 0 22px' }} />
-               {props.location}
+                {props.location}
             </HotelDetailCardRating>
             <HotelDetailsImg>
-                <img src={`/assets/img/${props.photo}`} alt="hotels-details" />
+                <img src={`/assets/img/${props.photo}`} alt={props.name} />
             </HotelDetailsImg>
         </HotelDetails>
     );

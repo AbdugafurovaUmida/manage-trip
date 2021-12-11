@@ -155,6 +155,7 @@ color: #84878B;
 
 const PropertyMenu = styled.li`
 display:flex;
+
 label{
     font-size: 14px;
     line-height: 21px;

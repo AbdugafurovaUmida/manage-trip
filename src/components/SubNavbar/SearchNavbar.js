@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from '../../styled';
-import { Nav } from 'react-bootstrap';
 import styled from 'styled-components';
 import './SearchNavbar.css'
 import { FaBed } from "react-icons/fa";
@@ -14,13 +13,10 @@ import { CgArrowsExchange } from "react-icons/cg";
 import Calendar from "react-calendar";
 import { useTranslation } from 'react-i18next';
 import Modal from 'react-bootstrap/Modal'
-import Button from '@restart/ui/esm/Button';
 import { useNavigate } from 'react-router';
-import { DetailTab } from '../../styled';
-
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import Loader from '../../Loader/Loader';
+
 
 
 

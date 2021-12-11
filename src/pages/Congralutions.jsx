@@ -1,7 +1,6 @@
 import React from 'react'
 import { Breadcrumb } from 'react-bootstrap';
 import { Container } from '../styled';
-import { PaymentBreadCrumb } from '../styled'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Subscribe from '../components/Subscribe/Subscribe'
 import Congrulations from '../components/Congrulations/Congrulations';

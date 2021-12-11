@@ -6,7 +6,6 @@ import { CreditCard } from '../../styled';
 import { RiPencilLine } from "react-icons/ri";
 import { PaymentTour } from '../../styled';
 import { PaymentCards } from '../../styled';
-import { PaymentContent } from '../../styled';
 import { Alliance } from '../../styled';
 import { UnionCardMaster } from '../../styled';
 import { UnionCardVisa } from '../../styled';
@@ -23,7 +22,6 @@ import { BookedDetails } from '../../styled';
 import { Total } from '../../styled';
 import { BookedDetailsTitle } from '../../styled';
 import { HotelsPaymentInfoImg } from '../../styled';
-import { CreditInformInput } from '../../styled';
 import ReactStars from "react-rating-stars-component";
 import { IoEllipsisVertical } from "react-icons/io5";
 import { Link } from 'react-router-dom';
@@ -127,7 +125,7 @@ const HotelsPayment = ({props}) => {
                             <span>{props.rating}</span> <small>({props.reviews} {t('SuccesReviews')})</small>
                         </HotelsPaymentRew>
                         <HotelsPaymentInfoImg>
-                            <img src={`/assets/img/${props.photo}`} alt="payment-hotel" />
+                            <img src={`/assets/img/${props.photo}`} alt={props.name} />
                         </HotelsPaymentInfoImg>
                         <PaymentRooms>1 {t('bedroom')}  +  1 {t('private-room')}</PaymentRooms>
                         <PaymentRegistr>

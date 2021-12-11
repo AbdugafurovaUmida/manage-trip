@@ -3,7 +3,6 @@ import React from "react";
 import './Header.css';
 import { Row, Col } from "react-bootstrap";
 import i18next from "i18next";
-import Select from 'react-select';
 import 'react-calendar/dist/Calendar.css';
 import { FaRegBell } from "react-icons/fa";
 import { BsCheck } from "react-icons/bs"
@@ -15,7 +14,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
 import { DropdownBellBody } from "../../styled";
-import { BellNotification_Text} from "../../styled";
+import { BellNotificationText} from "../../styled";
 import { DropdownProfile } from "../../styled";
 import { ProfileDropdownBody } from "../../styled"
 import { ProfileDropdownHeader} from "../../styled"
@@ -265,7 +264,7 @@ const Header = () => {
                     {/* currency Dropdown */}
                     <CurrencyDropdown>
                         <CurrencyDropdownHeader onClick={currencyDropdown}>
-                            {selectedCurrency ? currency.find(item => item.id == selectedCurrency).label : "USD" }
+                            {selectedCurrency ? currency.find(item => item.id === selectedCurrency).label : "USD" }
                         </CurrencyDropdownHeader>
                         < CurrencyDropdownBody className={`dropdown-body ${isCurrencyOpen && 'open'}`} >
                         <LanguageDropdownBodyIcon onClick={currencyDropdown}><TiDeleteOutline /></LanguageDropdownBodyIcon>
@@ -316,19 +315,19 @@ const Header = () => {
                         </BellDropdownBtn>
                         <DropdownBellBody className={`dropdown-body_bell ${isBellOpen && 'open'}`}>
                             <BellNotification>
-                                <BellNotification_Text >{t('notification-dropdown')}</BellNotification_Text>
+                                <BellNotificationText >{t('notification-dropdown')}</BellNotificationText>
                                 <span>4 {t('notification-date')}</span>
                             </BellNotification>
                             <BellNotification>
-                                <BellNotification_Text>{t('notification-dropdown')}</BellNotification_Text>
+                                <BellNotificationText>{t('notification-dropdown')}</BellNotificationText>
                                 <span >4 {t('notification-date')}</span>
                             </BellNotification>
                             <BellNotification>
-                                <BellNotification_Text >{t('notification-dropdown')}</BellNotification_Text>
+                                <BellNotificationText >{t('notification-dropdown')}</BellNotificationText>
                                 <span >4 {t('notification-date')}</span>
                             </BellNotification>
                             <BellNotification>
-                                <BellNotification_Text >{t('notification-dropdown')}</BellNotification_Text>
+                                <BellNotificationText >{t('notification-dropdown')}</BellNotificationText>
                                 <span>4 {t('notification-date')}</span>
                             </BellNotification>
                         </DropdownBellBody>

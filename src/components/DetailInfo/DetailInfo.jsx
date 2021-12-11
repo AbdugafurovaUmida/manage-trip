@@ -83,7 +83,7 @@ const DetailInfo = ({props}) => {
                 <button>{t('Building')}</button>
                 <button>{t('Top-value')}</button>
                 <ReactStars
-                    count={4, 5}
+                    count={4}
                     // onChange={ratingChanged}
                     size={24}
                     color="#e0a433"

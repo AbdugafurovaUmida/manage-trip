@@ -100,7 +100,7 @@ const ExploreCards = ({exploreobj}) => {
     return (
         <ExploreCard>
         <ExploreImg>
-            <img src={`/assets/img/${exploreobj.image}`}  alt="explore-world" />
+            <img src={`/assets/img/${exploreobj.image}`}  alt={exploreobj.title} />
         </ExploreImg>
         <ExploreRet>
             <ReactStars

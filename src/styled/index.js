@@ -40,7 +40,7 @@ display: none;
 z-index: 111;
 `
 
-export const BellNotification_Text = styled.p`
+export const BellNotificationText = styled.p`
 margin: 0;
 font-family: 'DM Sans';
 font-weight: normal;
