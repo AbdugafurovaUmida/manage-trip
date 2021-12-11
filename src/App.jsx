@@ -13,6 +13,10 @@ import HotelList from "./pages/HotelList";
 import Details from "./pages/Details";
 import 'swiper/swiper-bundle.css';
 import './App.css'
+import HotelPayment from "./pages/HotelPayment";
+import Congralutions from "./pages/Congralutions";
+import Notfound from "./components/Notfound";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const App = () => {
@@ -25,24 +29,18 @@ const App = () => {
       <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
         <div className="App">
           <BrowserRouter>
+            <ScrollToTop />
             <Header/>
             <Routes>
               <Route path='/' element={<Home/>}/>
-            </Routes> 
-            <Routes>
               <Route path='/profile' element={<Profile/>}/>
-            </Routes> 
-            <Routes>
               <Route path='/flights' element={<Flights/>}/>
-            </Routes> 
-            <Routes>
               <Route path='/rental-car' element={<RentalCar />}/>
-            </Routes> 
-            <Routes>
               <Route path='/hotel-list' element={<HotelList />}/>
-            </Routes> 
-            <Routes>
-              <Route path='/details' element={<Details />}/>
+              <Route path='/details/:id' element={<Details />}/>
+              <Route path='/hotel-payment/:id' element={<HotelPayment/>}/>
+              <Route path='/congrulation/:id' element={<Congralutions />}/>
+              <Route path='*' element={<Notfound />}/>
             </Routes>
             <Footer />
           </BrowserRouter>

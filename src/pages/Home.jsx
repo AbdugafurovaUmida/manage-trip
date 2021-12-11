@@ -22,13 +22,14 @@ import styled from 'styled-components';
 
 
 const HomePage = styled.div`
-background-color:#E5E5E5;
+background-color:${(props) => props.theme.HomePageBg};
 `
 
 
 
 const Home = () => {
     return (
+        <>
         <HomePage>
             <Intro/>
             <SearchNavbar />
@@ -40,6 +41,7 @@ const Home = () => {
             <TravelPassion />
             <Subscribe />
         </HomePage>
+        </>
     );
 }
 

@@ -1,7 +1,3 @@
-// import React, { useContext } from 'react';
-// import { ThemeContext } from 'styled-components';
-// import { Button, Card } from '../../styled';
-
 import { useTranslation } from "react-i18next";
 import React from "react";
 import './Header.css';
@@ -28,39 +24,35 @@ import { ProfileDropdownHeader} from "../../styled"
 const HeaderSection = styled.header`
 background-color: ${(props) => props.theme.HaederBack};
 box-shadow: 0px -1px 4px #E2E2EA;
-
+padding: 20px 40px;
 `
-
-
 const LanguageDropdown = styled.div`
 vertical-align: middle;
 display: inline-block;
 position: relative;
+z-index:333;
 `
-
 const LanguageDropdownHeader = styled.div`
 cursor: pointer;
 display: flex;
 justify-content: space-between;
 align-items: center;
 `
-
 const LanguageDropdownBody = styled.div`
+padding: 44px 30px 20px 24px;
 background-color:${(props) => props.theme.CurrencyBody};
-// border-top: 1px solid #E5E8EC;
 display: none;
 z-index: 111;
 width:335px;
 right: -150px;
 top:30px;
-// padding: 44px 30px 20px 24px;
 width: 314px;
 max-height: 416px;
 border:${(props) => props.theme.CurrencyBodyBorder};
 box-shadow: 0px 32px 60px -32px rgba(0, 0, 0, 0.1);
 border-radius: 16px;
+position: absolute;
 `
-
 const LanguageDropdownBodyIcon = styled.div`
 color:  #84878B;
 position: absolute;
@@ -68,7 +60,6 @@ font-size: 25px;
 top: 10px;
 right: 15px;
 `
-
 const LanguageButton = styled.div`
 width: 100%;
 border: transparent;
@@ -86,10 +77,8 @@ color:${(props) => props.theme.LanguageColor};
 &:active{
     background-color:${(props) => props.theme.LanguageButtonActivBg} ;
     border-radius: 8px;
-
 }
 `
-
 const LngDropdownImage = styled.img`
 width: 30px;
 height: 30px;
@@ -110,13 +99,13 @@ width: 20px;
 height: 20px;
 border-radius: 50%;
 padding-right:5px;
-// display:none;
 `
 
 const BellDropdown = styled.div`
 position:relative;
 vertical-align: middle;
 display: inline-block;
+z-index:333;
 `
 
 const BellDropdownBtn = styled.button`
@@ -143,21 +132,8 @@ span{
     border-radius: 50%;
     font-weight: 500;
     font-size: 6px;
-
 }
 `
-
-// const DropdownBellBody = styled.div`
-// top: 40px;
-// width: 414px;
-// max-height: 414px;
-// border: 1px solid #E7ECF3;
-// box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
-// right: -150px;
-// border-radius: 20px;
-// padding: 20px 10px;
-
-// `
 const BellNotification = styled.div`
 padding: 7px 46px 20px 56px;
     span{
@@ -177,81 +153,11 @@ padding: 7px 46px 20px 56px;
  
 }
 `
-
-// const BellNotification_Text = styled.p`
-// margin: 0;
-// font-family: 'DM Sans';
-// font-weight: normal;
-// font-size: 14px;
-// line-height: 18px;
-// color: #84878B;
-// position: relative;
-// &:before{
-//         content: '';
-//         position: absolute;
-//         left: -40px;
-//         top: 50%;
-//         width:4px;
-//         height:4px;
-//         opacity:0;
-//         border-radius: 50%;
-//         background-color: red;
-// }
-// `
-
-// const DropdownProfile = styled.div`
-// vertical-align: middle;
-// display: inline-block;
-// position:relative;
-
-// `
-// const ProfileDropdownHeader = styled.div`
-// display: flex;
-// align-items: center;
-// h3{
-//     font-weight: 500;
-//     font-size: 14px;
-//     margin: 0 15px 0 10px;
-//     color: rgba(59, 62, 68, 1);
-// }
-// }
-// `
-
-// const ProfileDropdownBody = styled.div`
-// border: 1px solid #3B3E44;
-// box-shadow: 0px 6px 30px rgba(37, 37, 37, 0.16);
-// border-radius: 20px;
-// div{
-//     font-family: 'Roboto';
-//     span{
-//         color:  #777E90;
-//     font-size: 20px;
-//     margin-left: 20px;
-//     display: inline-block;
-//     },
-//     a{
-//         text-decoration: none;
-//         font-weight: normal;
-//         font-size: 16px;
-//         line-height: 19px;
-//         color: #23262F;
-//         margin-left: 9px;
-//         display: inline-block;
-//     },
-//     p{
-//         text-decoration: none;
-//         font-weight: normal;
-//         font-size: 16px;
-//         line-height: 19px;
-//         color: #23262F;
-//         margin-left: 9px;
-//         display: inline-block;
-//     }
-// `
 const CurrencyDropdown = styled.button`
 background-color:transparent;
 border:transparent;
 position:relative;
+z-index:333;
 `
 
 const CurrencyDropdownBody = styled.div`
@@ -348,7 +254,7 @@ const Header = () => {
     const [isBellOpen, setBellOpen] = useState(false);
 
     return (
-        <HeaderSection className='header'>
+        <HeaderSection>
             <Row className='d-flex'>
                 <Col lg="4">
                     <Link to='/'><HeaderLogoLightImg src="/assets/img/header-logo.svg" alt="header-logo" /></Link>
@@ -435,7 +341,6 @@ const Header = () => {
                             <img src="/assets/img/delowar.svg" alt='profile' />
                             <h3 >Delowar</h3>
                             <IoMdArrowDropdown className={`${isProfilesOpen && "open"}`} />
-                            {/* <i className={`fa fa-chevron-right icon ${isProfilesOpen && "open"}`}></i> */}
                         </ProfileDropdownHeader>
                         <ProfileDropdownBody className={`dropdown-profile-body ${isProfilesOpen && 'open'}`}>
                             <div><span><CgProfile /></span> <Link to='/profile'>{t('dropdown_profile')}</Link></div>

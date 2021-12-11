@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../../styled'
 import styled from 'styled-components'
 import ReactStars from "react-rating-stars-component";
+import { useTranslation } from 'react-i18next';
 
 
 const Travel = styled.section`
@@ -14,17 +15,15 @@ font-weight: bold;
 font-size: 48px;
 line-height: 70px;
 letter-spacing: -0.005em;
-color: #141416;
+color:${(props) => props.theme.TravelTitleColor} ;
 margin-bottom:12px;
  `
 
 const TravelText = styled.p`
-font-family: 'Poppins';
-font-style: normal;
-font-weight: normal;
-font-size: 16px;
-line-height: 24px;
-color: #84878B;
+font-weight: 500;
+font-size: 24px;
+line-height: 36px;
+color:${(props) => props.theme.TravelTextColor}  ;
 margin:0;
 `
 
@@ -87,18 +86,18 @@ small{
 
 const TravelPassion = () => {
 
-
+    const { t } = useTranslation()
 
     return (
         <Container>
             <Travel>
-                <TravelTitle>Travel Your Passion</TravelTitle>
-                <TravelText>Most Brilliant reasons Entrada should be your one-stop-shop!</TravelText>
+                <TravelTitle>{t('travel-passion-title')}</TravelTitle>
+                <TravelText>{t('travel-passion-text')}</TravelText>
                 <TravelContent>
                     <TravelCard>
                         <img src="/assets/img/travel-passion(1).jpg" alt="travel-passion" />
                         <TravelCardInfo>
-                            <TravelName> Beach Hobby</TravelName>
+                            <TravelName> {t('Beach-Hobby')}</TravelName>
                             <TravelRating>
                                 <ReactStars
                                     count={1}
@@ -106,14 +105,14 @@ const TravelPassion = () => {
                                     size={24}
                                     color="#e0a433"
                                 />
-                                <small>4.8</small>  (122 reviews)
+                                <small>4.8</small>  (122 {`${t('SuccesReviews')}`})
                             </TravelRating>
                         </TravelCardInfo>
                     </TravelCard>
                     <TravelCard>
                         <img src="/assets/img/travel-passion(2).jpg" alt="travel-passion" />
                         <TravelCardInfo>
-                            <TravelName> City Tours</TravelName>
+                            <TravelName>{t('City-Tours')}</TravelName>
                             <TravelRating>
                                 <ReactStars
                                     count={1}
@@ -121,14 +120,14 @@ const TravelPassion = () => {
                                     size={24}
                                     color="#e0a433"
                                 />
-                                <small>4.8</small>  (122 reviews)
+                                <small>4.8</small>  (122 {`${t('SuccesReviews')}`})
                             </TravelRating>
                         </TravelCardInfo>
                     </TravelCard>
                     <TravelCard>
                         <img src="/assets/img/travel-passion(3).jpg" alt="travel-passion" />
                         <TravelCardInfo>
-                            <TravelName> Hiking Trips</TravelName>
+                            <TravelName> {t('Hiking-Trips')}</TravelName>
                             <TravelRating>
                                 <ReactStars
                                     count={1}
@@ -136,14 +135,14 @@ const TravelPassion = () => {
                                     size={24}
                                     color="#e0a433"
                                 />
-                                <small>4.8</small>  (122 reviews)
+                                <small>4.8</small>  (122 {`${t('SuccesReviews')}`})
                             </TravelRating>
                         </TravelCardInfo>
                     </TravelCard>
                     <TravelCard>
                         <img src="/assets/img/travel-passion(4).jpg" alt="travel-passion" />
                         <TravelCardInfo>
-                            <TravelName> Sports Trips</TravelName>
+                            <TravelName> {t('Sports-Trips')}</TravelName>
                             <TravelRating>
                                 <ReactStars
                                     count={1}
@@ -151,13 +150,12 @@ const TravelPassion = () => {
                                     size={24}
                                     color="#e0a433"
                                 />
-                                <small>4.8</small>  (122 reviews)
+                                <small>4.8</small>  (122 {`${t('SuccesReviews')}`})
                             </TravelRating>
                         </TravelCardInfo>
                     </TravelCard>
                 </TravelContent>
             </Travel>
-
         </Container>
     )
 }

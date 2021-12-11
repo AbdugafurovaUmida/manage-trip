@@ -1,6 +1,8 @@
+import { t } from 'i18next'
 import React from 'react'
 import styled from 'styled-components'
 import { Container } from '../../styled'
+import { useTranslation } from 'react-i18next'
 
 import './Destinations.css'
 
@@ -13,7 +15,7 @@ const DestinationFeatureTitle = styled.h2`
     font-size: 48px;
     line-height: 70px;
     letter-spacing: -0.005em;
-    color: #141416;
+    color: ${(props) => props.theme.DestinationFeatureTitleColor};
     font-weight: bold;
     margin-bottom:12px;
 `
@@ -22,7 +24,7 @@ const DestinationFeatureText = styled.p`
    font-family: 'Poppins';
    font-size: 16px;
    line-height: 24px;
-   color: #3B3E44;
+   color: ${(props) => props.theme.DestinationFeatureTextColor};
    font-weight: normal;
    margin:0;
 `
@@ -221,14 +223,18 @@ const CardRetSmall =styled.span`
 
 
 const Destinations = () => {
+
+
+    const { t } = useTranslation()
+
     return (
         <Container>
             <DestinationFeature>
                 <DestinationFeatureTitle>
-                    Featured Destinations
+                    {t('DestinationFeatureTitle')}
                 </DestinationFeatureTitle>
                 <DestinationFeatureText>
-                    Popular destinations open to visitors from Indonesia
+                    {t('DestinationFeatureText')}    
                 </DestinationFeatureText>
                 <DestinationContent>
                     <ContentLeft>
@@ -237,14 +243,14 @@ const Destinations = () => {
                             <CardImg src='/assets/img/image(1).jpg' alt='Barcelona-Tour'></CardImg>
                             <CardBodyLarge> 
                                 <CardBodyTitleLarge>
-                                    Barcelona Tour
+                                    {t('Barcelona-Tour')}
                                 </CardBodyTitleLarge>
                                 <div>
                                     <CardAvatorLarge>
                                         <img src="/assets/img/avator-large.jpg" alt="avator" />
                                     </CardAvatorLarge>
                                     <CardInfoLarge>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoLarge>
                                 </div>
                             </CardBodyLarge>
@@ -255,14 +261,14 @@ const Destinations = () => {
                             <CardBodyMiddle>
                                
                                 <CardBodyTitleMiddle>
-                                    London, United State
+                                    {t('London-United-State')}
                                 </CardBodyTitleMiddle>
                                 <div>
                                     <CardAvatorMiddle>
                                         <img src="/assets/img/avator-small.jpg" alt="avator" />
                                     </CardAvatorMiddle>
                                     <CardInfoMiddle>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoMiddle>
                                 </div>
                             </CardBodyMiddle>
@@ -273,14 +279,14 @@ const Destinations = () => {
                             <CardBodyMiddle>
                                
                                 <CardBodyTitleMiddle>
-                                    Australia Tour
+                                    {t('Australia-Tour')}
                                 </CardBodyTitleMiddle>
                                 <div>
                                     <CardAvatorMiddle>
                                         <img src="/assets/img/avator-small.jpg" alt="avator" />
                                     </CardAvatorMiddle>
                                     <CardInfoMiddle>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoMiddle>
                                 </div>
                             </CardBodyMiddle>
@@ -293,14 +299,14 @@ const Destinations = () => {
                             <CardBodySmall>
                                
                                 <CardBodyTitleSmall>
-                                    Australia Tour
+                                {t('Australia-Tour')}
                                 </CardBodyTitleSmall>
                                 <div>
                                     <CardAvatorSmall>
                                         <img src="/assets/img/avator-small.jpg" alt="avator" />
                                     </CardAvatorSmall>
                                     <CardInfoSmall>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoSmall>
                                 </div>
                             </CardBodySmall>
@@ -311,14 +317,14 @@ const Destinations = () => {
                             <CardBodySmall>
                                 
                                 <CardBodyTitleSmall>
-                                    Japan Tour
+                                   {t('Japan-Tour')}
                                 </CardBodyTitleSmall>
                                 <div>
                                     <CardAvatorSmall>
                                         <img src="/assets/img/avator-small.jpg" alt="avator" />
                                     </CardAvatorSmall>
                                     <CardInfoSmall>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoSmall>
                                 </div>
                             </CardBodySmall>
@@ -329,14 +335,14 @@ const Destinations = () => {
                             <CardBodySmall>
                                
                                 <CardBodyTitleSmall>
-                                    Japan Tour
+                                {t('Japan-Tour')}
                                 </CardBodyTitleSmall>
                                 <div>
                                     <CardAvatorSmall>
                                         <img src="/assets/img/avator-small.jpg" alt="avator" />
                                     </CardAvatorSmall>
                                     <CardInfoSmall>
-                                        196 Activities
+                                        196 {`${t('Activities')}`}
                                     </CardInfoSmall>
                                 </div>
                             </CardBodySmall>

@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from '../../styled'
 import styled from 'styled-components'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 
 
 const Subscribe =styled.section`
@@ -80,6 +81,8 @@ border:transparent;
 
 const Offer = () => {
 
+    const { t } = useTranslation()
+
     const subscribeRef = useRef()
 
     const handleSubmit = (e) =>{
@@ -93,13 +96,13 @@ const Offer = () => {
                     <form action="" onSubmit={handleSubmit}>
                 <SubscribeContent>
                     <div>
-                    <SubscribeTitle>Get our pro offers </SubscribeTitle>
-                    <SubscribeText>Create a visual identity for your company, and an overall brand</SubscribeText>
+                    <SubscribeTitle>{t('Get-offers')}</SubscribeTitle>
+                    <SubscribeText>{t('SubscribeText')}</SubscribeText>
                     </div>
                     <SubscribeSearch>
                         <SubscribeInput>
-                            <input type="text" name='subscribe' ref={subscribeRef} placeholder='Type your email here'  />
-                            <button type='submit'>Subscribe</button>
+                            <input type="text" name='subscribe' ref={subscribeRef} placeholder={`${t('subscribe-input')}`}  />
+                            <button type='submit'>{t('Subscribe-btn')}</button>
                         </SubscribeInput>
                     </SubscribeSearch>
                 </SubscribeContent>

@@ -15,15 +15,20 @@ import { FeatureBed } from '../../styled';
 import { FeatureRoom } from '../../styled';
 import { DescriptionAmenities } from '../../styled';
 import { DescriptionAmenitiesTitle } from '../../styled';
+import { DescriptionButtonMore } from '../../styled';
 import { DetailTab } from '../../styled';
 import { BiWifi } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { MdOutlineComputer } from "react-icons/md";
-import { MdRestaurant} from "react-icons/md";
+import { MdEmojiFoodBeverage } from "react-icons/md";
+import { MdRestaurant } from "react-icons/md";
+import { MdOutlineKeyboardHide } from "react-icons/md";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { MdPersonalVideo } from "react-icons/md";
 import { RiHotelBedLine } from "react-icons/ri";
 import { RiExchangeLine } from "react-icons/ri";
+import { useTranslation } from 'react-i18next';
 import './DetailInfo.css'
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -47,13 +52,13 @@ const TabListStyle = styled.div`
 
 const TabContentStyle = styled.div`
 .react-tabs__tab-list{
-    border-bottom: 1px solid #E6E8EC;
+    border-bottom:${(props) => props.theme.TabContentBorder} ;
     margin:0 0 5px 0; 
 },
 .react-tabs__tab{
     padding: 0;
     padding-bottom:15px;
-    color: #23262F;
+    color: ${(props) => props.theme.TabContentColor};
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -65,18 +70,18 @@ const TabContentStyle = styled.div`
 
 
 
-const DetailInfo = () => {
+const DetailInfo = ({props}) => {
 
-
+    const { t } = useTranslation()
 
     return (
         <DetailInform>
             <DetailInfoBtn>
                 <button>5.0</button>
-                <button>Perfect</button>
-                <button>Hotels</button>
-                <button>Building</button>
-                <button>Top value</button>
+                <button>{t('Perfect')}</button>
+                <button>{t('Hotels')}</button>
+                <button>{t('Building')}</button>
+                <button>{t('Top-value')}</button>
                 <ReactStars
                     count={4, 5}
                     // onChange={ratingChanged}
@@ -84,53 +89,54 @@ const DetailInfo = () => {
                     color="#e0a433"
                 />
             </DetailInfoBtn>
-            <DetailInformTitle>Exclusive room in house</DetailInformTitle>
-            <DetailInformText>Zuich, Switzerland</DetailInformText>
+            <DetailInformTitle>{t('Exclusive-room')}</DetailInformTitle>
+            <DetailInformText>{props.name}</DetailInformText>
             <DetailTab>
                 <Tabs >
                     <TabListStyle>
                         <TabContentStyle>
                             <TabList>
-                                <Tab> <TabStyle>Description </TabStyle> </Tab>
-                                <Tab><TabStyle>Features </TabStyle></Tab>
-                                <Tab><TabStyle> Virtual </TabStyle></Tab>
-                                <Tab><TabStyle> Room &#38; Price </TabStyle></Tab>
-                                <Tab><TabStyle> Review </TabStyle></Tab>
+                                <Tab> <TabStyle>{t('Description')} </TabStyle> </Tab>
+                                <Tab><TabStyle>{t('Features')} </TabStyle></Tab>
+                                <Tab><TabStyle> {t('Virtual')} </TabStyle></Tab>
+                                <Tab><TabStyle> {t('Rooms-price')} </TabStyle></Tab>
+                                <Tab><TabStyle> {t('Review')} </TabStyle></Tab>
                             </TabList>
                         </TabContentStyle>
                     </TabListStyle>
                     <TabPanel>
                         <DescriptionText>Arabian Park Hotel is a great choice for travellers looking for a 3 star hotel in Dubai. It is located in Bur Dubai. This Hotel stands out as one of the highly recom.2 kms), Al Wasl Indoor Stadium (1.2 kms), Dubai Mall (5.4 kms), Jumeirah Beach Park (9.6 kms) and Jumeirah Public Beach (15.8 kms).
                         </DescriptionText>
-                        <DescriptionFeaturesTitle>Hotel features</DescriptionFeaturesTitle>
+                        <DescriptionFeaturesTitle>{t('Hotel-features')}</DescriptionFeaturesTitle>
                         <DescriptionFeatures>
                             <FeatureWifi> <span><BiWifi /> </span> Wi-fi</FeatureWifi>
-                            <FeatureBathup> <span><FaBath /></span> Bathup</FeatureBathup>
-                            <FeatureBreakfast> <span><MdRestaurant /> </span> Breakfast</FeatureBreakfast>
-                            <FeatureBed><span><RiHotelBedLine/></span> Kins bed</FeatureBed>
+                            <FeatureBathup> <span><FaBath /></span>{t('Bathup')}</FeatureBathup>
+                            <FeatureBreakfast> <span><MdRestaurant /> </span>{t('Breakfast')}</FeatureBreakfast>
+                            <FeatureBed><span><RiHotelBedLine /></span>{t('Kings-bed')}</FeatureBed>
                             <FeatureRoom><span><RiExchangeLine /></span> 4m &times; 6m</FeatureRoom>
                         </DescriptionFeatures>
                         <DescriptionAmenities>
                             <DescriptionAmenitiesTitle>
-                            Amenities
+                               {t('Amenities')}
                             </DescriptionAmenitiesTitle>
                             <div>
                                 <ul>
-                                    <li> <span><BiWifi /></span> Free wifi 24/7</li>
-                                    <li> <span><RiComputerLine /></span> Free computer</li>
-                                    <li> <span><MdOutlineComputer /></span> Free wifi 24/7</li>
-                                    <li> <span><MdPersonalVideo /> </span> Free wifi 24/7</li>
+                                    <li> <span><BiWifi /></span> {t('Free')} wifi 24/7</li>
+                                    <li> <span><RiComputerLine /></span> {t('Free')} {t('computer')}</li>
+                                    <li> <span><MdOutlineComputer /></span> {t('Free')} wifi 24/7</li>
+                                    <li> <span><MdPersonalVideo /> </span> {t('Free')} wifi 24/7</li>
                                 </ul>
                                 <ul>
-                                    <li> <span><FaBath /></span> Free clean bathroom</li>
-                                    <li> <span></span> Breakfast included</li>
-                                    <li> <span></span> ATM</li>
-                                    <li> <span></span> Nearby city</li>
+                                    <li> <span><FaBath /></span> {t('Free')} {t('clean-bathroom')}</li>
+                                    <li> <span><MdEmojiFoodBeverage /></span> {t('Breakfast-included')}</li>
+                                    <li> <span><MdOutlineKeyboardHide /></span> ATM</li>
+                                    <li> <span><HiOutlineOfficeBuilding /></span> {t('Nearby city')}</li>
                                 </ul>
                             </div>
-
+                            <DescriptionButtonMore>
+                               {t('More-details')}
+                            </DescriptionButtonMore>
                         </DescriptionAmenities>
-
 
                     </TabPanel>
                     <TabPanel>

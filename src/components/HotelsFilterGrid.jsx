@@ -14,8 +14,8 @@ const HotelsFilterGrid = () => {
     return (
         <HotelsGrid>
             <Row className='d-flex justify-content-between'>
-                <Col xs={4} style={{paddingRight:'50px'}}><HotelsFilter /></Col>
-                <Col xs={8}><HotelsFilterInfo /></Col>
+                <Col xs={3} style={{paddingRight:'50px'}}><HotelsFilter /></Col>
+                <Col xs={9}><HotelsFilterInfo /></Col>
             </Row >
         </HotelsGrid>
     )

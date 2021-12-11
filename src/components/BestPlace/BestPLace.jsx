@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '../../styled'
 import styled from 'styled-components'
-import Card from 'react-bootstrap/Card'
+import { useTranslation } from 'react-i18next';
 
 const SearchedPlaces = styled.div`
      margin-top:-100px;
@@ -14,7 +14,7 @@ const SearchedPlacesTitle = styled.h2`
      font-size: 48px;
      line-height: 70px;
      letter-spacing: -0.005em;
-     color: #23262F;
+     color: ${(props) => props.theme.SearchedPlacesTitleColor};
      text-align:center;
      margin-bottom:12px;
 `
@@ -27,123 +27,129 @@ const SearchedPlacesText = styled.p`
      color: #84878B;
      font-weight: normal;
      max-width:593px;
+     text-align:center;
 `
 
 const SearchedPlacesContent = styled.div`
     padding:65px 0px 82px 0px;
     display:flex;
+    justify-content:center;
     flex-wrap:wrap;
     gap:15px;
 `
 
+const SearchedPlacesCard = styled.div`
+padding:28px 0px 25px 30px;
+border: ${(props) => props.theme.SearchedPlacesCardBorder};
+// background-color:transparent;
+border-radius: 10px;
+max-width:270px;
+width:100%;
+:hover{
+    background-color:${(props) => props.theme.SearchedPlacesCardBg};
+    box-shadow: 0px 20px 51px rgba(96, 96, 96, 0.1);
+}
+&:active{
+    opacity:0.6;
+}
+`
+
+
+const SearchedPlacesImg = styled.div`
+border-radius:10px;
+overflow:hidden;
+margin-bottom:18px;
+img{
+    border-radius:10px;
+}
+
+`
+
+const SearchedCardTitle = styled.h5`
+font-weight: 500;
+font-size: 24px;
+margin-bottom:12px;
+color:${(props) => props.theme.SearchedCardTitleColor} ;
+`
+
+const SearchedCardText = styled.p`
+margin:0;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+color:${(props) => props.theme.SearchedCardTextColor} ;
+`
+
+
+
 const BestPLace = () => {
+    const { t } = useTranslation()
     return (
         <Container>
             <SearchedPlaces>
                 <SearchedPlacesTitle>
-                    Search a best place in the world
+                    {t('SearchedPlacesTitle')}
                 </SearchedPlacesTitle>
                 <SearchedPlacesText>
-                    Whether you’re looking for places for a vacation. We are here to Guide you
-                    about the details you need to check in and ease your trips in advance
+                    {t('SearchedPlacesText')}
                 </SearchedPlacesText>
                 <SearchedPlacesContent>
-                    <Card style={{ width: '270px'}}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '270px' }}>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
-                    </Card>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-1.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Batu, East Java</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-2.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Kuta</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-3.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Surabaya, East Java</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-4.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Malang, East Java</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-4.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Dieng, Central Java</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-5.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Nusa Dua, Lombok</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-2.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Bandung, West Java</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
+                    <SearchedPlacesCard>
+                        <SearchedPlacesImg>
+                            <img src="/assets/img/best-places-1.jpg" alt="best-places" />
+                        </SearchedPlacesImg>
+                        <SearchedCardTitle>Wakatobi, Sumatera</SearchedCardTitle>
+                        <SearchedCardText>86 {`${t('Destinations')}`}</SearchedCardText>
+                    </SearchedPlacesCard>
                 </SearchedPlacesContent>
             </SearchedPlaces>
         </Container>
