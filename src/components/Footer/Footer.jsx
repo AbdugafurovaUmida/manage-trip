@@ -28,7 +28,8 @@ const FooterContent = styled.div`
         .btn{
             background-color:${(props) => props.theme.MoudeBg}; 
             color:${(props) => props.theme.MoudebtnColor};
-                transition: color .10s
+                transition: color .10s;
+                border:0.5px solid transparent;
         }
     }
  `
