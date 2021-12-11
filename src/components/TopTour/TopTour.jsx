@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useTranslation } from 'react-i18next';
 import TopTourCards from '../TopTourCard/TopTourCards';
@@ -8,6 +7,9 @@ import styled from 'styled-components'
 import { Container } from '../../styled'
 import Loader from '../../Loader/Loader';
 import apiCalls from '../../config/api';
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+import SwiperCore, { Pagination, Navigation } from 'swiper';
 import 'swiper/swiper.min.css';
 import './TopTour.css'
 
@@ -41,7 +43,36 @@ display:flex;
 gap:30px;
 `
 
-SwiperCore.use([Autoplay]);
+const TopButtons = styled.div`
+position:absolute;
+right:0;
+top:110px;
+    button{
+        background-color: #F4F5F6;
+        width:36px;
+        height:36px;
+        border-radius:50%;
+        border: 1px solid #F4F5F6;
+        line-height:13px;
+        color:#B1B5C4;
+        svg{
+            margin:0 auto;
+        }
+        :not(:last-child){
+            margin-right:10px;
+        }
+        :active{
+          background-color:#E6E8EC;
+          border: 1px solid #E6E8EC;
+          color:#84878B;
+        }
+    }
+  
+`
+
+SwiperCore.use([Pagination, Navigation]);
+
+
 
 const TopTour = () => {
     const { t } = useTranslation()
@@ -82,11 +113,18 @@ const TopTour = () => {
                     {t('TopText')}
 
                 </TopText>
-
+                <TopButtons>
+                    <button><IoIosArrowBack className='top-prev-button' /></button>
+                    <button><IoIosArrowForward className='top-next-button' /></button>
+                </TopButtons>
                 {error ? <p className='error'>{error}</p> : ''}
                 {isLoading ? <Loader /> : ''}
                 {!isLoading && !error ? <Swiper
-                    modules={[Autoplay]}
+                    modules={[Navigation]}
+                    navigation={{
+                        nextEl: '.top-next-button',
+                        prevEl: '.top-prev-button'
+                    }}
                     grabCursor={true}
                     spaceBetween={30}
                     slidesPerView={3}

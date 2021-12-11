@@ -17,7 +17,6 @@ import { DescriptionAmenities } from '../../styled';
 import { DescriptionAmenitiesTitle } from '../../styled';
 import { DescriptionButtonMore } from '../../styled';
 import { DetailTab } from '../../styled';
-import { AmenitiesMenu } from '../../styled';
 import { BiWifi } from "react-icons/bi";
 import { FaBath } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
@@ -27,9 +26,6 @@ import { MdRestaurant } from "react-icons/md";
 import { MdOutlineKeyboardHide } from "react-icons/md";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { MdPersonalVideo } from "react-icons/md";
-import { HiOutlineOfficeBuilding } from "react-icons/hi";
-import { MdOutlineKeyboardHide } from "react-icons/md";
-import { MdEmojiFoodBeverage } from "react-icons/md";
 import { RiHotelBedLine } from "react-icons/ri";
 import { RiExchangeLine } from "react-icons/ri";
 import { useTranslation } from 'react-i18next';
@@ -123,7 +119,7 @@ const DetailInfo = ({props}) => {
                             <DescriptionAmenitiesTitle>
                                {t('Amenities')}
                             </DescriptionAmenitiesTitle>
-                            <AmenitiesMenu>
+                            <div>
                                 <ul>
                                     <li> <span><BiWifi /></span> {t('Free')} wifi 24/7</li>
                                     <li> <span><RiComputerLine /></span> {t('Free')} {t('computer')}</li>
@@ -136,7 +132,7 @@ const DetailInfo = ({props}) => {
                                     <li> <span><MdOutlineKeyboardHide /></span> ATM</li>
                                     <li> <span><HiOutlineOfficeBuilding /></span> {t('Nearby city')}</li>
                                 </ul>
-                            </AmenitiesMenu>
+                            </div>
                             <DescriptionButtonMore>
                                {t('More-details')}
                             </DescriptionButtonMore>

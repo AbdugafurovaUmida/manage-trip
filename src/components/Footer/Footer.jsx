@@ -24,6 +24,12 @@ const FooterContent = styled.div`
         background-color:${(props) => props.theme.MoudeBg};
         border-radius: 10px;
         color:${(props) => props.theme.MoudeColor};
+        padding:8px;
+        .btn{
+            background-color:${(props) => props.theme.MoudeBg}; 
+            color:${(props) => props.theme.MoudebtnColor};
+                transition: color .10s
+        }
     }
  `
 const FooterText = styled.p`
@@ -75,6 +81,19 @@ a:not(:last-child){
  const HeaderLogoLightImg = styled.img`
  display:${(props) => props.theme.HeaderLogoLight};
  `
+
+
+ const SwitchButtons = styled.div`
+ .btn-check:focus+.btn, .btn:focus{
+     box-shadow:none;
+     background-color:${(props) => props.theme.MoudeCheckBg};
+    //  padding:6px;
+    box-shadow: 0px 2px 2px rgba(67, 67, 67, 0.1);
+border-radius: 8px;
+color:${(props) => props.theme.MoudeCheckColor} ;
+
+ }
+ `
  
  
 
@@ -100,7 +119,8 @@ export const Footer = () => {
                             <FooterText>
                              {t('FooterText')}
                             </FooterText>
-                            <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
+                            <SwitchButtons>
+                              <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
                                 <ToggleButton id="tbg-btn-1"
                                     value={1}
                                     onClick={() => toggleTheme('light')}
@@ -115,9 +135,9 @@ export const Footer = () => {
                                 >
                                     <FiMoon />
                                 </ToggleButton>
-                            </ToggleButtonGroup>
-           
-
+                            </ToggleButtonGroup>  
+                            </SwitchButtons>
+                            
 
                         </Col>
                         <Col xs={3}>

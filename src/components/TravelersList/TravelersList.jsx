@@ -8,7 +8,6 @@ import { CgArrowsExchange } from "react-icons/cg";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import Modal from 'react-bootstrap/Modal'
-import Button from '@restart/ui/esm/Button';
 import Select, { components } from "react-select";
 import Calendar from "react-calendar";
 import { Link } from 'react-router-dom';
@@ -499,6 +498,7 @@ const TravelersList = () => {
                                 {t('nav-location')}
                                 <Select
                                     options={options}
+                                    ref={selectRef}
                                     placeholder={t('location-placeholder')}
                                     components={{ Option: IconOption }}
                                     styles={{customStyles}}
@@ -559,4 +559,10 @@ const TravelersList = () => {
 
 export default TravelersList;
 
+function StartDate({ date }) {
+    return < Calendar onChange={date.setDate} value={date.date} />
+}
 
+function EndDate({ date }) {
+    return < Calendar onChange={date.setEndDate} value={date.endDate} />
+}

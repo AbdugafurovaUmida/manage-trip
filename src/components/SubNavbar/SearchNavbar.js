@@ -89,6 +89,46 @@ line-height: 24px;
     border:transparent;
     margin:0;
 }
+.css-26l3qy-menu {
+    width:400px;
+    font-size:16px;
+    background-color:${(props) => props.theme.SelectMenuBg};
+    color:${(props) => props.theme.SelectMenuColor};
+    .css-1n7v3ny-option {
+        background-color:transparent !important;
+        color:grey;
+        :active{
+            background-color:transparent !important;
+        }
+       
+    }
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
+}
+.css-1pahdxg-control{
+    border-color:transparent;
+    display:block;
+    box-shadow:none;
+    background-color:transparent;
+    padding-top:6px;
+    min-height:0;
+    :hover{
+        border:1px solid transparent;
+        
+    }
+.css-1n7v3ny-option {
+    background-color:#404858;
+    opacity:0.8;
+}
+.css-qc6sy-singleValue{
+    color:${(props) => props.theme.CheckInputColor};
+    font-weight: normal;
+font-size: 16px;
+}
+
+
+}
 `
 
 const PassengerDropdown = styled.div`
@@ -336,6 +376,13 @@ padding-top:6px;
 color:${(props) => props.theme.CheckInputColor} ;
 `
 
+const CalendarModal = styled.div`
+position:relative;
+.react-calendar{
+    background-color:red;
+}
+
+`
 
 const SearchNavbar = () => {
 
@@ -366,8 +413,11 @@ const SearchNavbar = () => {
     const { Option } = components;
     const IconOption = props => (
       <Option {...props}>
-         <HiOutlineLocationMarker  style={{marginRight:'10px',color:'#B1B5C4',fontSize:'16px'}}/>
-        {props.data.label}
+          <div style={{display:'flex'}}>
+        <HiOutlineLocationMarker  style={{margin:'10px 10px 0px 0px',color:'#B1B5C4',fontSize:'20px'}}/>
+         <p style={{marginBottom:'0'}}> {props.data.name}</p>
+         </div>
+        <p style={{paddingLeft:'30px',margin:'0'}}>{props.data.label}</p>
       </Option>
     );
 
@@ -389,8 +439,10 @@ const SearchNavbar = () => {
     const handleClose = () => {
         setShow(false);
     }
-    const handleShow = () => setShow(true);
-
+    const handleShow = () => {
+        setShow(true);
+        
+    }
 
     const handleCheckOut = () => setShowCheckOut(true);
 
@@ -529,11 +581,11 @@ const SearchNavbar = () => {
                             <CheckFilter>
                                 {t('nav-location')}
                                 <Select
+                                aria-atomic={true}
                                     options={options}
                                     ref={selectRef}
                                     placeholder={t('location-placeholder')}
                                     components={{ Option: IconOption }}
-                                   
                                 />
                                 <ArrowCircle><CgArrowsExchange /></ArrowCircle>
                             </CheckFilter>
@@ -551,23 +603,25 @@ const SearchNavbar = () => {
                                 onHide={handleClose}
                                 backdrop="static"
                                 keyboard={false}
+                              
                             >
                                 <Modal.Body  onClick={handleClose}>
                                     <StartDate date={{ date, setDate }} />
                                 </Modal.Body>
                             </Modal>
+                           <CalendarModal>
                             <CheckFilter>
                                 {t('check-out')}
                                 <div onClick={handleCheckOut}>
                                     <CheckInput name="checkout" value={endDate} ref={checkoutRef} />
                                 </div>
                             </CheckFilter>
-                           
                             <Modal
                                 show={showCheckOut}
                                 onHide={handleCloseCheckOut}
                                 backdrop="static"
                                 keyboard={false}
+                          
                                 
                             > 
                                 <Modal.Body onClick={handleCloseCheckOut} >
@@ -575,6 +629,7 @@ const SearchNavbar = () => {
                           
                                 </Modal.Body>
                             </Modal>
+                            </CalendarModal>
                             <SearchNav>
                                 <button type='submit'> {t('nav-search')} </button>
                             </SearchNav>

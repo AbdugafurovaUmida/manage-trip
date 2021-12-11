@@ -1215,7 +1215,12 @@ export const DarkTheme = {
    PassengerDropdownBg:'#222529',
    PassengerDropdownColor:'#FCFCFD',
    PassengerDataInfoColor:'#84878B',
-   PassengerFilterColor:'1px solid #3B3E44'
+   PassengerFilterColor:'1px solid #3B3E44',
+   MoudeCheckBg:'#474A52',
+   MoudebtnColor:'#84878B',
+   MoudeCheckColor: '#E7ECF3',
+   SelectMenuBg:'#222529',
+   SelectMenuColor:'#E7ECF3'
    
   
   
@@ -1383,14 +1388,19 @@ export const LightTheme = {
     FooterText:'#84878B',
     FooterTitle:'#222529',
     FooterMenuTitle:'#84878B',
-    MoudeBg:'#FCFCFD',
+    MoudeBg:'#FFFFFF',
     MoudeColor:'#3B3E44',
     SearchFilterBg:'#fff',
     TabStyleSelectedColor:'#3B3E44',
     PassengerDropdownBg:'#fff',
     PassengerDropdownColor:'#777E91',
     PassengerDataInfoColor:'#B1B5C4',
-    PassengerFilterColor:'1px solid #E6E8EC'
+    PassengerFilterColor:'1px solid #E6E8EC',
+    MoudeCheckBg:'#FCFCFD',
+    MoudebtnColor:'#868B90',
+    MoudeCheckColor: '#3B3E44',
+    SelectMenuBg:'#FFFFFF',
+    SelectMenuColor:'#777E91'
    
    
 };
