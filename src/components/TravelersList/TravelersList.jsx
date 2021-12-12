@@ -262,7 +262,7 @@ color:${(props) => props.theme.CheckFilterColor};
     margin-right: 8px;
 }
 .css-b62m3t-container{
-    width:260px;
+    width:220px;
 }
 .css-319lph-ValueContainer {
     padding:0;
@@ -275,10 +275,16 @@ color:${(props) => props.theme.CheckFilterColor};
     padding:0;
 }
 .css-1s2u09g-control{
-    min-height:19px;
-    padding-top:8px;
+    min-height:14px;
+    padding-top:6px;
     background-color:transparent;
     border:transparent;
+    &:selected{
+        // min-height:30px;
+        padding-top:8px;
+        background-color:transparent;
+        border:transparent;
+    }
 }
 .css-1hb7zxy-IndicatorsContainer {
     display:none;
@@ -294,6 +300,47 @@ line-height: 24px;
     border:transparent;
     margin:0;
 }
+.css-26l3qy-menu {
+    width:400px;
+    font-size:16px;
+    background-color:${(props) => props.theme.SelectMenuBg};
+    color:${(props) => props.theme.SelectMenuColor};
+    .css-1n7v3ny-option {
+        background-color:transparent !important;
+        color:grey;
+        :active{
+            background-color:transparent !important;
+        }
+       
+    }
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
+}
+.css-1pahdxg-control{
+    border-color:transparent;
+    display:block;
+    box-shadow:none;
+    background-color:transparent;
+    min-height:0;
+    padding-top:6px;
+    :hover{
+        border:1px solid transparent;
+        
+    }
+.css-1n7v3ny-option {
+    background-color:#404858;
+    opacity:0.8;
+}
+.css-qc6sy-singleValue{
+    color:${(props) => props.theme.CheckInputColor};
+    font-weight: normal;
+font-size: 16px;
+}
+.css-tlfecz-indicatorContainer {
+    display:none;
+}
+
 `
 
 
@@ -422,7 +469,7 @@ const TravelersList = () => {
 
             <HotelListBreadCrumb>
                 <Breadcrumb>
-                    <Breadcrumb.Item href="#">{t('Home')}</Breadcrumb.Item>
+                    <Breadcrumb.Item href="/">{t('Home')}</Breadcrumb.Item>
                     <span><MdKeyboardArrowRight /></span>
                     <Breadcrumb.Item active>{t('Hotel-list')}</Breadcrumb.Item>
                 </Breadcrumb>

@@ -40,10 +40,10 @@ const HotelPayment = () => {
                 setTimeout(() => {
                     setIsLoading(false)
                 }, 4000);
-                setIsLoading(true)
                 setHoteldetails(data)
             } catch (error) {
                 setError(error.message);
+                setIsLoading(true)
             }
         }
 

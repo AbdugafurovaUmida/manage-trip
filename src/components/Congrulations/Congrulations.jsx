@@ -199,11 +199,11 @@ const Congrulations = () => {
                 const data = await apiCalls.gethotelsid(id);
                 setTimeout(() => {
                     setIsLoading(false)
-                }, 4000);
-                setIsLoading(true)
+                }, 4000);      
                 setHoteldetails(data)
             } catch (error) {
                 setError(error.message);
+                setIsLoading(true)
             }
         }
 

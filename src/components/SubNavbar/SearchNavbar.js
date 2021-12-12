@@ -25,7 +25,7 @@ import 'react-tabs/style/react-tabs.css';
 const CheckTravelers = styled.div`
 display:flex;
 align-items:end;
-margin-top: 26px;
+margin-top: 10px;
 .react-calendar&{
     background-color:${(props) => props.theme.CalendarBg}!important;
 }
@@ -61,11 +61,11 @@ color:${(props) => props.theme.CheckFilterColor};
 }
 .css-1s2u09g-control{
     min-height:14px;
-    // padding-top:6px;
+    padding-top:6px;
     background-color:transparent;
     border:transparent;
     &:selected{
-        min-height:30px;
+        // min-height:30px;
         padding-top:8px;
         background-color:transparent;
         border:transparent;
@@ -108,6 +108,7 @@ line-height: 24px;
     box-shadow:none;
     background-color:transparent;
     min-height:0;
+    padding-top:6px;
     :hover{
         border:1px solid transparent;
         
@@ -464,8 +465,8 @@ const SearchNavbar = () => {
 
     useEffect(() => {
         selectRef.current.value = 'where are your from?';
-        checkinRef.current.value = 'Add-date';
-        checkoutRef.current.value = 'Add-date';
+        // checkinRef.current.value = 'Add-date';
+        // checkoutRef.current.value = 'Add-date';
     }, [])
 
 
@@ -591,7 +592,7 @@ const SearchNavbar = () => {
                             <CheckFilter>
                                 {t('check-in')}
                                 <div onClick={handleShow}>
-                                    <CheckInput name="name" value={date} ref={checkinRef} />
+                                    <CheckInput name="name" value={date} ref={checkinRef}  placeholder={t('add-placeholder')}/>
                                 </div>
                                 <ArrowCircle><CgArrowsExchange /></ArrowCircle>
                             </CheckFilter>
@@ -610,7 +611,7 @@ const SearchNavbar = () => {
                             <CheckFilter>
                                 {t('check-out')}
                                 <div onClick={handleCheckOut}>
-                                    <CheckInput name="checkout" value={endDate} ref={checkoutRef} />
+                                    <CheckInput name="checkout" value={endDate} ref={checkoutRef} placeholder={t('add-placeholder')} />
                                 </div>
                             </CheckFilter>
                             <Modal

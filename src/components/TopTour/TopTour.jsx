@@ -89,11 +89,12 @@ const TopTour = () => {
                 setTimeout(() => {
                     setIsLoading(false)
                 }, 4000);
-                setIsLoading(true)
+               
                 setTour(data);
                 console.log(data)
             } catch (error) {
                 setError(error.message);
+                setIsLoading(true)
             }
         }
 

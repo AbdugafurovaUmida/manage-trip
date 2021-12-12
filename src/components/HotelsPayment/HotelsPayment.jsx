@@ -117,7 +117,7 @@ const HotelsPayment = ({props}) => {
                     <HotelsPaymentInfo>
                         <p>{props.name} </p>
                         <HotelsPaymentRew>  <ReactStars
-                            count={1}
+                            count={props.rating}
                             // onChange={ratingChanged}
                             size={24}
                             color="#e0a433"

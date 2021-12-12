@@ -319,12 +319,12 @@ const HotelsFilterInfo = () => {
                 setTimeout(() => {
                     setIsLoading(false)
                 }, 4000);
-                setIsLoading(true)
                 setHotels(data);
                 setTotalpage(data.page)
                 console.log(data)
             } catch (error) {
                 setError(error.message);
+                setIsLoading(true)
             }
         }
 
