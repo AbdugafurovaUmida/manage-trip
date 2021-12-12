@@ -60,8 +60,8 @@ color:${(props) => props.theme.CheckFilterColor};
     padding:0;
 }
 .css-1s2u09g-control{
-    min-height:19px;
-    padding-top:6px;
+    min-height:14px;
+    // padding-top:6px;
     background-color:transparent;
     border:transparent;
     &:selected{
