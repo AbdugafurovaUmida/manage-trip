@@ -87,12 +87,12 @@ const ExploreWorld = () => {
                 const data = await apiCalls.getexplore();
                 setTimeout(() => {
                     setIsLoading(false)
-                }, 4000);
-                setIsLoading(true)
+                }, 4000);          
                 setExplore(data);
                 console.log(data)
             } catch (error) {
                 setError(error.message);
+                setIsLoading(true)
             }
         }
         getexplore();
@@ -104,8 +104,8 @@ const ExploreWorld = () => {
         <Container>
             <Explore>
                 <ExploreButtons>
-                    <button><IoIosArrowBack className='prev-button'/></button>
-                    <button><IoIosArrowForward className='next-button'/></button>  
+                    <button className='prev-button'><IoIosArrowBack /></button>
+                    <button className='next-button'><IoIosArrowForward /></button>  
                 </ExploreButtons>
                 <ExploreTitle>{t('Explore-title')}</ExploreTitle>
                 <ExploreText>10,788 {`${t('Explore-text')}`}</ExploreText>

@@ -114,8 +114,8 @@ const TopTour = () => {
 
                 </TopText>
                 <TopButtons>
-                    <button><IoIosArrowBack className='top-prev-button' /></button>
-                    <button><IoIosArrowForward className='top-next-button' /></button>
+                    <button className='top-prev-button'><IoIosArrowBack  /></button>
+                    <button className='top-next-button'><IoIosArrowForward className='top-next-button' /></button>
                 </TopButtons>
                 {error ? <p className='error'>{error}</p> : ''}
                 {isLoading ? <Loader /> : ''}
