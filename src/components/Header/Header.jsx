@@ -264,7 +264,7 @@ const Header = () => {
                     {/* currency Dropdown */}
                     <CurrencyDropdown>
                         <CurrencyDropdownHeader onClick={currencyDropdown}>
-                            {selectedCurrency ? currency.find(item => item.id === selectedCurrency).label : "USD" }
+                            {selectedCurrency ? currency.find(item => item.id == selectedCurrency).label : "USD" }
                         </CurrencyDropdownHeader>
                         < CurrencyDropdownBody className={`dropdown-body ${isCurrencyOpen && 'open'}`} >
                         <LanguageDropdownBodyIcon onClick={currencyDropdown}><TiDeleteOutline /></LanguageDropdownBodyIcon>
