@@ -13,7 +13,9 @@ const CongralutionPage = styled.div`
 background-color:${(props) => props.theme.SuccessPageBg};
 `
 const CongralutionBreadCrumb = styled.div`
-margin:40px 0 34px 0;
+padding-top:40px;
+margin:0 0 34px 0;
+background-color:${(props) => props.theme.SuccessPageBg};
 span{
     margin:0 5px;
 }
