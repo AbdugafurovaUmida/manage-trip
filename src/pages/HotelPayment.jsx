@@ -63,7 +63,7 @@ const HotelPayment = () => {
                         <span><MdKeyboardArrowRight /></span>
                         <Breadcrumb.Item href="/hotel-list">{t('Hotel-list')}</Breadcrumb.Item>
                         <span><MdKeyboardArrowRight /></span>
-                        <Breadcrumb.Item href="/details">{t('Hotel-details')}</Breadcrumb.Item>
+                        <Breadcrumb.Item href={`/details/${hoteldetails.id}` }>{t('Hotel-details')}</Breadcrumb.Item>
                         <span><MdKeyboardArrowRight /></span>
                         <Breadcrumb.Item active>{t('payment-confirm')}</Breadcrumb.Item>
                     </Breadcrumb>

@@ -6,6 +6,10 @@ import Subscribe from '../components/Subscribe/Subscribe'
 import Congrulations from '../components/Congrulations/Congrulations';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import apiCalls from '../config/api';
+import Loader from '../Loader/Loader';
 
 
 
@@ -24,7 +28,39 @@ span{
 
 const Congralutions = () => {
 
+
     const { t } = useTranslation()
+
+    const { id } = useParams()
+
+
+    const [hoteldetails, setHoteldetails] = useState([])
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState();
+
+    useEffect(() => {
+
+
+        const gethotelsid = async () => {
+            try {
+                const data = await apiCalls.gethotelsid(id);
+                setTimeout(() => {
+                    setIsLoading(false)
+                }, 4000);
+                setHoteldetails(data)
+            } catch (error) {
+                setError(error.message);
+                setIsLoading(true)
+            }
+        }
+
+        gethotelsid();
+
+    }, [id]);
+
+
+
+
 
     return (
         <CongralutionPage>
@@ -35,16 +71,19 @@ const Congralutions = () => {
                         <span><MdKeyboardArrowRight /></span>
                         <Breadcrumb.Item href="/hotel-list">{t('Hotel-list')}</Breadcrumb.Item>
                         <span><MdKeyboardArrowRight /></span>
-                        <Breadcrumb.Item href="/details">{t('Hotel-details')}</Breadcrumb.Item>
+                        <Breadcrumb.Item href={ `/details/${hoteldetails.id}`}>{t('Hotel-details')}</Breadcrumb.Item>
                         <span><MdKeyboardArrowRight /></span>
-                        <Breadcrumb.Item href="/hotel-payment">{t('payment-confirm')}</Breadcrumb.Item>
+                        <Breadcrumb.Item href={ `/hotel-payment/${hoteldetails.id}`}>{t('payment-confirm')}</Breadcrumb.Item>
                         <span><MdKeyboardArrowRight /></span>
                         <Breadcrumb.Item active> {t('Congratulations')}</Breadcrumb.Item>
                     </Breadcrumb>
                 </Container>
             </CongralutionBreadCrumb>
             <Container>
-                <Congrulations />
+                {error ? <p className='error'>{error}</p> : ''}
+                {isLoading ? <Loader /> : ''}
+                {error && isLoading ? error : ''}
+                {!isLoading && !error ? <Congrulations props={hoteldetails} /> : ''}
             </Container>
             <Subscribe />
         </CongralutionPage>

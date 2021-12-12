@@ -181,36 +181,7 @@ img{
 `
 
 
-const Congrulations = () => {
-
-
-    const { id } = useParams()
-
-
-    const [hoteldetails, setHoteldetails] = useState([])
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState();
-
-    useEffect(() => {
-
-
-        const gethotelsid = async () => {
-            try {
-                const data = await apiCalls.gethotelsid(id);
-                setTimeout(() => {
-                    setIsLoading(false)
-                }, 4000);      
-                setHoteldetails(data)
-            } catch (error) {
-                setError(error.message);
-                setIsLoading(true)
-            }
-        }
-
-        gethotelsid();
-
-    }, [id]);
-
+const Congrulations = ({props}) => {
 
 
 
@@ -219,25 +190,20 @@ const Congrulations = () => {
 
     return (
         <SuccessPage>
-        {error ? <p className='error'>{error}</p> : ''}
-        {isLoading ? <Loader /> : ''}
-        {error && isLoading ? error :''}
-        {!isLoading && !error ? 
-            <>
             <SuccessText>{t('SuccessText')}</SuccessText>
             <SuccessTitle>{t('SuccessTitle')}</SuccessTitle>
             <SuccessInform>
-                <SuccessInformText>{hoteldetails.name}</SuccessInformText>
+                <SuccessInformText>{props.name}</SuccessInformText>
                 <Row>
                     <Col xs={4}>
                         <SuccesRew>
                             <ReactStars
-                                count={hoteldetails.rating }
+                                count={props.rating }
                                 // onChange={hoteldetails.rating}
                                 size={24}
                                 color="#e0a433"
                             />
-                            <div> {hoteldetails.rating} <small>({hoteldetails.reviews} {t('SuccesReviews')})</small></div>
+                            <div> {props.rating} <small>({props.reviews} {t('SuccesReviews')})</small></div>
                             <div>1 {t('SuccesRew')}</div>
                         </SuccesRew>
                         <SuccesTraveller><div><span>{t('SuccesTravellerdates')}</span>May 15 - 22, 2021 </div> <div><span>{t('SuccesTraveller')}</span> 1 {t('SuccesTravellerPassenger')}</div></SuccesTraveller>
@@ -250,7 +216,7 @@ const Congrulations = () => {
                                 <div><RiCalendar2Line />{t('Booking-date')}</div> <span>30 Apr, 2021</span>
                             </div>
                             <div>
-                                <div><BiTrash />{t('Booking-total')}</div> <span>${`${hoteldetails.price * 5} `}</span>
+                                <div><BiTrash />{t('Booking-total')}</div> <span>${`${props.price * 5} `}</span>
                             </div>
                             <div>
                                 <div><RiWallet3Fill />{t('PaymentMethod')}</div> <span>{t('CreditCard')}</span>
@@ -260,14 +226,11 @@ const Congrulations = () => {
                     </Col>
                     <Col xs={7} style={{ paddingLeft: '100px' }}>
                         <ReserveDetailsImg>
-                            <img src={`/assets/img/${hoteldetails.photo}`} alt={hoteldetails.name}/>
+                            <img src={`/assets/img/${props.photo}`} alt={props.name}/>
                         </ReserveDetailsImg>
                     </Col>
                 </Row>
             </SuccessInform>
-            </>
-            : ''}
-        
         </SuccessPage>
     )
 }
