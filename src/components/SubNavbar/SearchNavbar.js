@@ -65,7 +65,7 @@ color:${(props) => props.theme.CheckFilterColor};
     background-color:transparent;
     border:transparent;
     &:selected{
-        min-height:10px;
+        min-height:30px;
         padding-top:8px;
         background-color:transparent;
         border:transparent;
