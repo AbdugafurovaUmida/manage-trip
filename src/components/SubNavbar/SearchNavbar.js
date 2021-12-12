@@ -47,7 +47,7 @@ color:${(props) => props.theme.CheckFilterColor};
     margin-right: 8px;
 }
 .css-b62m3t-container{
-    width:220px;
+    width:240px;
 }
 .css-319lph-ValueContainer {
     padding:0;
@@ -61,7 +61,6 @@ color:${(props) => props.theme.CheckFilterColor};
 }
 .css-1s2u09g-control{
     min-height:19px;
-    padding-top:6px;
     background-color:transparent;
     border:transparent;
     &:selected{
