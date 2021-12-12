@@ -107,7 +107,6 @@ line-height: 24px;
     display:block;
     box-shadow:none;
     background-color:transparent;
-    padding-top:6px;
     min-height:0;
     :hover{
         border:1px solid transparent;
@@ -122,7 +121,9 @@ line-height: 24px;
     font-weight: normal;
 font-size: 16px;
 }
-
+.css-tlfecz-indicatorContainer {
+    display:none;
+}
 
 }
 `
